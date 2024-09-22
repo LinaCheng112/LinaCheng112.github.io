@@ -1,0 +1,69 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper{
+    width: 800;
+    margin: 0 auto;
+}
+
+#banner {
+    background-color: bisque;
+    width: 800px;
+    height: 150px;
+    overflow: hidden; /* 確保包含浮動的元素 */
+    position:fixed;
+    text-align: center;
+    clear: both;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.container {
+    overflow: hidden; /* Clear floats */
+  }
+
+#banner-placeholder{
+    height: 150px;
+}
+
+#nav {
+    background-color: aquamarine;
+    width: 100px;
+    /*float: left;  設定 float */
+    position:fixed;
+}
+
+#nav-placeholder{
+    width:100px;
+    float:left;
+}
+
+#content {
+    background-color: beige;
+    width: 600px;
+    height: 1000px;
+    float: left;
+    margin-left: 110px;
+}
+
+#supporting {
+    background-color: darkolivegreen;
+    width: 100px;
+    float: left;
+}
+
+#footer {
+    background-color: darkseagreen;
+    width: 800px;
+    height: 50px;
+    clear: both; /* 清除浮動，確保 footer 不被擠到上方 */
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
