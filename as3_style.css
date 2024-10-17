@@ -47,7 +47,7 @@
           }
   
   #seventh {
-    height: 100vh;          
+    height: 40vh;          
     background-image: url("https://images.unsplash.com/photo-1616143662631-7a0e4751f362?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");  
     background-size: cover;
     background-attachment: fixed;
@@ -55,7 +55,7 @@
           }
   
   #eighth {
-    height: 70vh;          
+    height: 80vh;          
     background-image: url("https://images.unsplash.com/photo-1616136765445-585d4b005d77?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");  
     background-size: cover;
     background-attachment: fixed;
@@ -63,7 +63,7 @@
           }
   
   #ninth {
-    height: 40vh;          
+    height: 60vh;          
     background-image: url("https://images.unsplash.com/photo-1616134964020-255f56a0c41d?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");  
     background-size: cover;
     background-attachment: fixed;
