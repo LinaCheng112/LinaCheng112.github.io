@@ -1,12 +1,12 @@
-$(window).scroll(function () {
-    var winw = $("#statusbar").width() - $(window).width(); // 計算圖片寬度超出的部分
-    var winh = $(window).height();
-    var doch = $(document).height();
-    var current_pos = $(window).scrollTop();
-    var scroll_factor = 1.0;
-    var new_left = -(current_pos * winw * scroll_factor) / (doch - winh);
-
-    $("#statusbar").css({
-        transform: `translateX(${new_left}px)`
+$(document).ready(function () {
+    $(window).scroll(function () {
+        var max_scroll = $(document).height() - $(window).height();
+        var max_w = $("#statusbar").width() - $(window).width();
+        var current_pos = $(window).scrollTop();
+        console.log(current_pos);
+        var new_left = (-1 * max_w * current_pos) / max_scroll;
+        $("#statusbar").css({
+            left: new_left
+        });
     });
 });
