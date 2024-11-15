@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        section {
+            width: 100%;
+            position: relative;
+        }
+        
+        .leading-section {
+            height: 200vh;
+            background-color: #f0f0f0;
+        }
+        
+        .middle-section {
+            height: 200vh;
+            background-color: #e0e0e0;
+        }
+        
+        .ending-section {
+            height: 200vh;
+            background-color: #d0d0d0;
+        }
+        
+        .video-wrapper {
+            height: 300vh; /* 影片容器高度為 3 倍視窗高度 */
+            position: relative;
+        }
+        
+        .video-container {
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+        
+        video {
+            position: absolute;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 20;
+        }
+        
+        .overlay-content {
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        h1 {
+            position: relative;
+            top: 50vh;
+            left: 20vw;
+            background-color: white;
+            margin: 0;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Leading Section -->
+    <section class="leading-section">
+        <h1>Leading Section</h1>
+    </section>
+    
+    <!-- First Video Section -->
+    <div class="video-wrapper">
+        <div class="video-container">
+            <video id="video1" src="https://web.cw.com.tw/climate-2020/landing/cover-mobile.mp4" playsinline muted></video>
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h1>Touching sentence 1: ohohoh</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Middle Section -->
+    <section class="middle-section">
+        <h1>Middle Section</h1>
+    </section>
+    
+    <!-- Second Video Section -->
+    <div class="video-wrapper">
+        <div class="video-container">
+            <video id="video2" src="https://web.cw.com.tw/climate-2020/landing/cover-mobile.mp4" playsinline muted></video>
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h1>Touching sentence 2: ohohoh</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Ending Section -->
+    <section class="ending-section">
+        <h1>Ending Section</h1>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            const video1 = $('#video1').get(0);
+            const video2 = $('#video2').get(0);
+            
+            // 計算各個區段的位置和範圍
+            function calculateSections() {
+                const videoWrappers = $('.video-wrapper');
+                
+                return {
+                    video1: {
+                        wrapper: videoWrappers.eq(0),
+                        start: videoWrappers.eq(0).offset().top,
+                        end: videoWrappers.eq(0).offset().top + videoWrappers.eq(0).height() - $(window).height()
+                    },
+                    video2: {
+                        wrapper: videoWrappers.eq(1),
+                        start: videoWrappers.eq(1).offset().top,
+                        end: videoWrappers.eq(1).offset().top + videoWrappers.eq(1).height() - $(window).height()
+                    }
+                };
+            }
+            
+            // 控制影片播放進度
+            function updateVideoProgress(video, scrollPosition, start, end) {
+                if (!video || !video.duration) return;
+                
+                const totalScrollDistance = end - start;
+                const currentScrollPosition = scrollPosition - start;
+                const progress = currentScrollPosition / totalScrollDistance;
+                const clampedProgress = Math.max(0, Math.min(1, progress));
+                
+                video.currentTime = video.duration * clampedProgress;
+            }
+            
+            // 視窗滾動事件處理
+            $(window).scroll(function() {
+                const scrollPosition = $(window).scrollTop();
+                const sections = calculateSections();
+                
+                // 控制第一個影片
+                if (scrollPosition >= sections.video1.start && scrollPosition <= sections.video1.end) {
+                    updateVideoProgress(
+                        video1,
+                        scrollPosition,
+                        sections.video1.start,
+                        sections.video1.end
+                    );
+                }
+                
+                // 控制第二個影片
+                if (scrollPosition >= sections.video2.start && scrollPosition <= sections.video2.end) {
+                    updateVideoProgress(
+                        video2,
+                        scrollPosition,
+                        sections.video2.start,
+                        sections.video2.end
+                    );
+                }
+            });
+            
+            // 預加載影片
+            video1.load();
+            video2.load();
+        });
+    </script>
+</body>
+</html>
