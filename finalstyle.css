@@ -74,9 +74,13 @@ p-white {
   color: white;
   line-height: 200%;
   z-index: 2;
-  padding-left: 260px;
-  padding-right: 260px;
   font-weight: medium;
+
+  /* 修改 1 */
+  /* padding-left: 260px; */
+  /* padding-right: 260px; */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 p-black {
@@ -108,13 +112,17 @@ p-black {
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   max-width: 800px;
+
+  /* 修改 2 */
+  margin: 0 auto;
 }
 
 .card-container {
   width: 400px;
   height: 300px;
   position: relative;
-  left: 50%;
+  /* 修改 2 */
+  /* left: 50%; */
   perspective: 1000px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
   border-radius: 4px;
