@@ -74,8 +74,8 @@ p-white {
             color: white;
             line-height: 200%;
             z-index: 2;
-            padding-left: 260px;
-            padding-right: 260px;
+            left: 50%;
+            transform: translateX(-50%);
             font-weight: medium;
         }
 
@@ -89,6 +89,7 @@ p-black {
             padding-left: 260px;
             padding-right: 260px;
             font-weight: medium;
+            margin: 0 auto;
         }
 
 .highlight {
@@ -115,7 +116,6 @@ p-black {
   width: 400px;
   height: 300px;
   position: relative;
-  left: 50%;
   perspective: 1000px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
   border-radius: 4px;
@@ -224,3 +224,4 @@ p-black {
     color: #FFFFFF;
     text-decoration: none;
 }
+
