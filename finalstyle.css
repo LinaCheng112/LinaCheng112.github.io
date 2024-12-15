@@ -74,7 +74,7 @@ p-white {
             color: white;
             line-height: 200%;
             z-index: 2;
-            left: 50%;
+            display: flex;
             font-weight: medium;
         }
 
@@ -85,7 +85,7 @@ p-black {
             color: black;
             line-height: 200%;
             z-index: 2;
-            left: 50%;
+            display: flex;
             font-weight: medium;
         }
 
