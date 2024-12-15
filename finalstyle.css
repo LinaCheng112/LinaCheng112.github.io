@@ -36,8 +36,6 @@ h1 {
             color: white;
             font-weight: bold;
             line-height: 140%;
-            padding-left: 200px;
-            padding-right: 200px;
             margin-top: 400px;
         }
 
@@ -49,8 +47,6 @@ h2 {
             color: black;
             font-weight: bold;
             line-height: 200%;
-            padding-left: 240px;
-            padding-right: 240px;
             margin-bottom: 60px;
             margin-top: 40px;
         }
