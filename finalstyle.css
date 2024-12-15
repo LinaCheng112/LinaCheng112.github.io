@@ -49,8 +49,8 @@ h2 {
   color: black;
   font-weight: bold;
   line-height: 200%;
-  padding-left: 240px;
-  padding-right: 240px;
+  /* padding-left: 240px; */
+  /* padding-right: 240px; */
   margin-bottom: 60px;
   margin-top: 40px;
 }
